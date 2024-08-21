@@ -11,10 +11,9 @@ This project is a demo multiplayer roulette game built using React, Redux, and B
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
 - [Usage](#usage)
-- [Game Usage](#game-features)
+- [Game Features](#game-features)
 - [Available Scripts](#available-scripts)
 - [Technologies Used](#technologies-used)
-֊ [TODO](#todo)
 
 ## Getting Started
 
@@ -150,7 +149,7 @@ To play the Roulette Multiplayer Game, follow these steps:
 
 - **Multiple Sessions**: The game supports multiple sessions, so different groups of players can play simultaneously without interfering with each other.
 - **Real-Time Updates**: All players within a game session will see real-time updates, wheel spins, and results.
-    - TODO: display other players placed bets on dashboard
+    - *TODO*: display other players' placed bets on the dashboard
 - **Bet Responsibly**: Make sure to place your bets carefully. Once the wheel is spun, you cannot change or withdraw your bets for that round.
 
 ## Available Scripts
@@ -183,7 +182,7 @@ For the server:
   - Implement a phase in the game to automatically display the winners once the game ends.
   - Store winners and history into a db.
 - **Highlight winning players:** Ensure that players who win are prominently highlighted.
-- **Update Dashboard**: Update the dashboard to show all players placed bets and their results for better visibility.
+- **Update Dashboard**: Update the dashboard to show all players' placed bets and their results for better visibility.
 
 
 
