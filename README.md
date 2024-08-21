@@ -11,8 +11,10 @@ This project is a demo multiplayer roulette game built using React, Redux, and B
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
 - [Usage](#usage)
+- [Game Usage](#game-features)
 - [Available Scripts](#available-scripts)
 - [Technologies Used](#technologies-used)
+֊ [TODO](#todo)
 
 ## Getting Started
 
@@ -114,6 +116,43 @@ You can also use docker-compose.yaml to run the application:
 
 The game will be accessible at `http://localhost:3000`.
 
+## Game Features
+
+To play the Roulette Multiplayer Game, follow these steps:
+
+1. **Join the Game**:
+
+   - Open the game in your browser at `http://localhost:3000`.
+   - Enter your name and players number to start a new one.
+   - Or choose an available game session to join.
+
+2. **Place Your Bets**:
+
+   - Once in the game, you’ll be able to see the roulette board and place your bets.
+   - Choose your preferred numbers from Player section and place your bets by clicking the appropriate cell in the board.
+   - Tap **Place Bet** button to place your bet for the game.
+
+3. **Spin the Wheel**:
+
+   - Any player can spin spin the roulette wheel and the game will register all the **placed bets** points.
+   - Wait for the wheel to stop.
+   - Tap on **See Results and Play Again** button to reveal the winning number and start a new round.
+
+4. **Check Results**:
+
+   - The game will display the winning number.
+   - The winning dashboard will update with the latest results for all players.
+
+5. **Next Round**:
+   - After the results are shown, a new round will start, and players can place their bets again.
+
+### Important Notes:
+
+- **Multiple Sessions**: The game supports multiple sessions, so different groups of players can play simultaneously without interfering with each other.
+- **Real-Time Updates**: All players within a game session will see real-time updates, wheel spins, and results.
+    - TODO: display other players placed bets on dashboard
+- **Bet Responsibly**: Make sure to place your bets carefully. Once the wheel is spun, you cannot change or withdraw your bets for that round.
+
 ## Available Scripts
 
 Both the client and server have available scripts:
@@ -137,6 +176,16 @@ For the server:
 - TypeScript: A superset of JavaScript that adds static type checking.
 - Express: A fast, unopinionated, minimalist web framework for Node.js.
 - Material-UI: A popular React UI framework for implementing Google's Material Design.
+
+## To-Do
+
+- **Create a new winning/result phase**
+  - Implement a phase in the game to automatically display the winners once the game ends.
+  - Store winners and history into a db.
+- **Highlight winning players:** Ensure that players who win are prominently highlighted.
+- **Update Dashboard**: Update the dashboard to show all players placed bets and their results for better visibility.
+
+
 
 ## License
 
