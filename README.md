@@ -5,6 +5,7 @@ This project is a demo multiplayer roulette game built using React, Redux, and B
 - Multiple Players
 - Multiple Game Sessions
 - Lobby of Games
+- Animations
 
 ## Table of Contents
 
