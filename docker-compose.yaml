@@ -1,0 +1,25 @@
+services:
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: roulette_multiplayer_server
+    ports:
+      - 8002:8002
+    networks:
+      - main
+
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: roulette_multiplayer_client
+    ports:
+      - 3000:3000
+    networks:
+      - main
+
+networks:
+  main:
+    driver: bridge
