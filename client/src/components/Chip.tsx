@@ -1,6 +1,6 @@
-import React from "react";
-import classNames from "classnames";
-import { ChipValues } from "../types";
+import React from 'react';
+import classNames from 'classnames';
+import { ChipValues } from '../types';
 
 interface ChipProps {
   currentItemChips: { sum: number } | undefined;
@@ -23,33 +23,23 @@ const Chip: React.FC<ChipProps> = ({
     return Math.random() * (max - min) + min;
   };
 
-  // const getChipClasses = (chip: ChipValues) => {
-  //   return classNames({
-  //       "chip-100-placed": chip === ChipValues.HighRoller,
-  //       "chip-20-placed": chip === ChipValues.Premium,
-  //       "chip-10-placed": chip === ChipValues.Classic,
-  //       "chip-5-placed": chip === ChipValues.LowRoller,
-  //       chipValueImage: true,
-  //   });
-  // }
-
   const getChipClasses = (chip: ChipValues) => {
     const chipClass = (() => {
       switch (chip) {
         case ChipValues.HighRoller:
-          return "chip-100-placed";
+          return 'chip-100-placed';
         case ChipValues.Premium:
-          return "chip-20-placed";
+          return 'chip-20-placed';
         case ChipValues.Classic:
-          return "chip-10-placed";
+          return 'chip-10-placed';
         case ChipValues.LowRoller:
-          return "chip-5-placed";
+          return 'chip-5-placed';
         default:
-          return "";
+          return '';
       }
     })();
 
-    return classNames(chipClass, "chipValueImage");
+    return classNames(chipClass, 'chipValueImage');
   };
 
   if (!currentItemChips) {

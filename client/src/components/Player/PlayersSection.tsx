@@ -26,7 +26,6 @@ const PlayerSection = ({ ctx, G, match }) => {
 
   const open = Boolean(anchorEl);
 
-  // console.log('G.players:', G.players);
   return (
     <div className="display-player-section">
       <Typography variant="h4" color="#FAFAD2" align="center">

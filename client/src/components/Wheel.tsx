@@ -1,7 +1,7 @@
-import anime from "animejs";
-import { useCallback } from "react";
-import { useEffect } from "react";
-import { rouletteData, WheelNumber } from "../types";
+import anime from 'animejs';
+import { useCallback } from 'react';
+import { useEffect } from 'react';
+import { rouletteData, WheelNumber } from '../types';
 
 const Wheel = (props: {
   rouletteData: rouletteData;
@@ -15,7 +15,7 @@ const Wheel = (props: {
 
   var rouletteWheelNumbers = props.rouletteData.numbers;
   console.log(props.rouletteData);
-  console.log("number", props.number);
+  console.log('number', props.number);
   const getRouletteIndexFromNumber = (number: string) => {
     return rouletteWheelNumbers.indexOf(parseInt(number));
   };
@@ -87,25 +87,25 @@ const Wheel = (props: {
         getBallEndRotation(zeroFromEndRotation, currentNumber);
 
       // reset to the last number
-      anime.set([".layer-2", ".layer-4"], {
+      anime.set(['.layer-2', '.layer-4'], {
         rotate: function () {
           return lastNumberRotation;
         },
       });
       // reset zero
-      anime.set(".ball-container", {
+      anime.set('.ball-container', {
         rotate: function () {
           return 0;
         },
       });
 
       anime({
-        targets: [".layer-2", ".layer-4"],
+        targets: ['.layer-2', '.layer-4'],
         rotate: function () {
           return endRotation; // random number
         },
         duration: singleSpinDuration, // random duration
-        easing: `cubicBezier(${bezier.join(",")})`,
+        easing: `cubicBezier(${bezier.join(',')})`,
         complete: function (anim: any) {
           lastNumber = currentNumber;
           props.startAgain();
@@ -113,7 +113,7 @@ const Wheel = (props: {
       });
       // aniamte ball
       anime({
-        targets: ".ball-container",
+        targets: '.ball-container',
         translateY: [
           { value: 0, duration: 2000 },
           { value: 20, duration: 1000 },
@@ -122,7 +122,7 @@ const Wheel = (props: {
         ],
         rotate: [{ value: ballEndRotation, duration: singleSpinDuration }],
         loop: 1,
-        easing: `cubicBezier(${bezier.join(",")})`,
+        easing: `cubicBezier(${bezier.join(',')})`,
       });
     },
     [props.startAgain]
@@ -130,33 +130,30 @@ const Wheel = (props: {
 
   useEffect(() => {
     var nextNubmer = props.number.next;
-    if (nextNubmer != null && nextNubmer !== "") {
+    if (nextNubmer != null && nextNubmer !== '') {
       var nextNumberInt = parseInt(nextNubmer);
       spinWheel(nextNumberInt);
     }
   }, [props.number]);
 
   return (
-    <div className={"roulette-wheel"}>
+    <div className={'roulette-wheel'}>
       <div
-        className={"layer-2 wheel"}
-        style={{ transform: "rotate(0deg)" }}
+        className={'layer-2 wheel'}
+        style={{ transform: 'rotate(0deg)' }}
       ></div>
-      <div className={"layer-3"}></div>
+      <div className={'layer-3'}></div>
       <div
-        className={"layer-4 wheel"}
-        style={{ transform: "rotate(0deg)" }}
+        className={'layer-4 wheel'}
+        style={{ transform: 'rotate(0deg)' }}
       ></div>
-      <div className={"layer-5"}></div>
-      <div className={"ball-container"} style={{ transform: "rotate(0deg)" }}>
+      <div className={'layer-5'}></div>
+      <div className={'ball-container'} style={{ transform: 'rotate(0deg)' }}>
         <div
-          className={"ball"}
-          style={{ transform: "translate(0, -163.221px)" }}
+          className={'ball'}
+          style={{ transform: 'translate(0, -163.221px)' }}
         ></div>
       </div>
-      {/* <svg width="380" height="380">
-        <circle cx="190" cy="190" r="190" style={{touch-action: 'none'}}></circle>
-      </svg> */}
     </div>
   );
 };

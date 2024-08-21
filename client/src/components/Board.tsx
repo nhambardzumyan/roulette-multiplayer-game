@@ -1,7 +1,8 @@
-import React from "react";
-import { ValueType, Item } from "../types";
-import ChipComponent from "./ChipComponent";
-var classNames = require("classnames");
+import React from 'react';
+import classNames from 'classnames';
+
+import { ValueType, Item } from '../types';
+import ChipComponent from './ChipComponent';
 
 class Board extends React.Component<any, any> {
   numbers: Item[][];
@@ -31,7 +32,7 @@ class Board extends React.Component<any, any> {
       index >= 0
         ? index % this.totalNumbers
         : this.totalNumbers - Math.abs(index % this.totalNumbers);
-    return i == 0 || number == null ? "none" : i % 2 == 0 ? "black" : "red";
+    return i == 0 || number == null ? 'none' : i % 2 == 0 ? 'black' : 'red';
   };
 
   getCellItemFromCellItemType(type: any) {}
@@ -44,49 +45,49 @@ class Board extends React.Component<any, any> {
         isEvenOdd = 2;
       }
     }
-    let numberValue = "value-" + number;
+    let numberValue = 'value-' + number;
     var cellClass = classNames({
       //[`${numberValue}`]: true,
-      "board-cell-number": type === ValueType.NUMBER,
-      "board-cell-double-split": type === ValueType.DOUBLE_SPLIT,
-      "board-cell-quad-split": type === ValueType.QUAD_SPLIT,
-      "board-cell-triple-split": type === ValueType.TRIPLE_SPLIT,
-      "board-cell-empty": type === ValueType.EMPTY,
-      "board-cell-even": type === ValueType.EVEN || isEvenOdd === 1,
-      "board-cell-odd": type === ValueType.ODD || isEvenOdd === 2,
-      "board-cell-number-1-18":
+      'board-cell-number': type === ValueType.NUMBER,
+      'board-cell-double-split': type === ValueType.DOUBLE_SPLIT,
+      'board-cell-quad-split': type === ValueType.QUAD_SPLIT,
+      'board-cell-triple-split': type === ValueType.TRIPLE_SPLIT,
+      'board-cell-empty': type === ValueType.EMPTY,
+      'board-cell-even': type === ValueType.EVEN || isEvenOdd === 1,
+      'board-cell-odd': type === ValueType.ODD || isEvenOdd === 2,
+      'board-cell-number-1-18':
         type === ValueType.NUMBERS_1_18 ||
         (number !== null &&
           number >= 1 &&
           number <= 18 &&
           type === ValueType.NUMBER),
-      "board-cell-number-19-36":
+      'board-cell-number-19-36':
         type === ValueType.NUMBERS_19_36 ||
         (number !== null &&
           number >= 19 &&
           number <= 36 &&
           type === ValueType.NUMBER),
-      "board-cell-number-1-12":
+      'board-cell-number-1-12':
         type === ValueType.NUMBERS_1_12 ||
         (number !== null &&
           number % 3 === 0 &&
           type === ValueType.NUMBER &&
           number !== 0),
-      "board-cell-number-2-12":
+      'board-cell-number-2-12':
         type === ValueType.NUMBERS_2_12 ||
         (number !== null && number % 3 === 2 && type === ValueType.NUMBER),
-      "board-cell-number-3-12":
+      'board-cell-number-3-12':
         type === ValueType.NUMBERS_3_12 ||
         (number !== null && number % 3 === 1 && type === ValueType.NUMBER),
-      "board-cell-red":
+      'board-cell-red':
         type === ValueType.RED ||
         (number !== null &&
-          this.getRouletteColor(number) === "red" &&
+          this.getRouletteColor(number) === 'red' &&
           type === ValueType.NUMBER),
-      "board-cell-black":
+      'board-cell-black':
         type === ValueType.BLACK ||
         (number !== null &&
-          this.getRouletteColor(number) === "black" &&
+          this.getRouletteColor(number) === 'black' &&
           type === ValueType.NUMBER),
     });
 
@@ -242,7 +243,7 @@ class Board extends React.Component<any, any> {
                   console.log(this.numbers);
                   var keyId = 0;
                   return (
-                    <tr key={"tr_board_" + index}>
+                    <tr key={'tr_board_' + index}>
                       {item.map((cell, cellIndex) => {
                         var cellClass = this.getClassNamesFromCellItemType(
                           cell.type,
@@ -252,8 +253,8 @@ class Board extends React.Component<any, any> {
                           cell.type === ValueType.NUMBER &&
                           cell.value === 0
                         ) {
-                          var tdKey = "td_" + cell.type + "_" + cell.value;
-                          var chipKey = "chip_" + cell.type + "_" + cell.value;
+                          var tdKey = 'td_' + cell.type + '_' + cell.value;
+                          var chipKey = 'chip_' + cell.type + '_' + cell.value;
 
                           var currentItemChips =
                             this.props.chipsData.placedChips.get(cell);
@@ -274,20 +275,20 @@ class Board extends React.Component<any, any> {
                             />
                           );
                         } else {
-                          var chipKeyValue = cell.value + "";
+                          var chipKeyValue = cell.value + '';
                           if (cell.value === undefined) {
-                            var split = cell.valueSplit + "";
-                            chipKeyValue = "split_" + split;
+                            var split = cell.valueSplit + '';
+                            chipKeyValue = 'split_' + split;
                           }
-                          var tdKey = "td_" + cell.type + "_" + chipKeyValue;
+                          var tdKey = 'td_' + cell.type + '_' + chipKeyValue;
                           var chipKey =
-                            "chip_" + cell.type + "_" + chipKeyValue;
+                            'chip_' + cell.type + '_' + chipKeyValue;
 
                           if (cell.type === ValueType.EMPTY) {
                             keyId++;
                             return (
                               <td
-                                key={"empty_" + keyId}
+                                key={'empty_' + keyId}
                                 className={cellClass}
                               ></td>
                             );
@@ -328,8 +329,8 @@ class Board extends React.Component<any, any> {
 
                   <ChipComponent
                     currentItemChips={currentItemChips_1_12}
-                    tdKey={"td_other_1_12"}
-                    chipKey={"chip_other_1_12"}
+                    tdKey={'td_other_1_12'}
+                    chipKey={'chip_other_1_12'}
                     cell={this.other_1_12}
                     rowSpan={1}
                     colSpan={7}
@@ -347,8 +348,8 @@ class Board extends React.Component<any, any> {
                   <td></td>
                   <ChipComponent
                     currentItemChips={currentItemChips_2_12}
-                    tdKey={"td_other_2_12"}
-                    chipKey={"chip_other_2_12"}
+                    tdKey={'td_other_2_12'}
+                    chipKey={'chip_other_2_12'}
                     cell={this.other_2_12}
                     rowSpan={1}
                     colSpan={7}
@@ -365,8 +366,8 @@ class Board extends React.Component<any, any> {
                   <td></td>
                   <ChipComponent
                     currentItemChips={currentItemChips_3_12}
-                    tdKey={"td_other_3_12"}
-                    chipKey={"chip_other_3_12"}
+                    tdKey={'td_other_3_12'}
+                    chipKey={'chip_other_3_12'}
                     cell={this.other_3_12}
                     rowSpan={1}
                     colSpan={7}
@@ -385,8 +386,8 @@ class Board extends React.Component<any, any> {
                   <td colSpan={2}></td>
                   <ChipComponent
                     currentItemChips={currentItemChips_1_18}
-                    tdKey={"td_other_1_18"}
-                    chipKey={"chip_other_1_18"}
+                    tdKey={'td_other_1_18'}
+                    chipKey={'chip_other_1_18'}
                     cell={this.other_1_18}
                     rowSpan={1}
                     colSpan={3}
@@ -403,8 +404,8 @@ class Board extends React.Component<any, any> {
                   <td></td>
                   <ChipComponent
                     currentItemChips={currentItemChips_even}
-                    tdKey={"td_other_even"}
-                    chipKey={"chip_other_even"}
+                    tdKey={'td_other_even'}
+                    chipKey={'chip_other_even'}
                     cell={this.other_even}
                     rowSpan={1}
                     colSpan={3}
@@ -421,8 +422,8 @@ class Board extends React.Component<any, any> {
                   <td></td>
                   <ChipComponent
                     currentItemChips={currentItemChips_red}
-                    tdKey={"td_other_red"}
-                    chipKey={"chip_other_red"}
+                    tdKey={'td_other_red'}
+                    chipKey={'chip_other_red'}
                     cell={this.other_red}
                     rowSpan={1}
                     colSpan={3}
@@ -439,8 +440,8 @@ class Board extends React.Component<any, any> {
                   <td></td>
                   <ChipComponent
                     currentItemChips={currentItemChips_black}
-                    tdKey={"td_other_black"}
-                    chipKey={"chip_other_black"}
+                    tdKey={'td_other_black'}
+                    chipKey={'chip_other_black'}
                     cell={this.other_black}
                     rowSpan={1}
                     colSpan={3}
@@ -457,8 +458,8 @@ class Board extends React.Component<any, any> {
                   <td></td>
                   <ChipComponent
                     currentItemChips={currentItemChips_odd}
-                    tdKey={"td_other_odd"}
-                    chipKey={"chip_other_odd"}
+                    tdKey={'td_other_odd'}
+                    chipKey={'chip_other_odd'}
                     cell={this.other_odd}
                     rowSpan={1}
                     colSpan={3}
@@ -475,8 +476,8 @@ class Board extends React.Component<any, any> {
                   <td></td>
                   <ChipComponent
                     currentItemChips={currentItemChips_19_36}
-                    tdKey={"td_other_19_36"}
-                    chipKey={"chip_other_19_36"}
+                    tdKey={'td_other_19_36'}
+                    chipKey={'chip_other_19_36'}
                     cell={this.other_19_36}
                     rowSpan={1}
                     colSpan={3}

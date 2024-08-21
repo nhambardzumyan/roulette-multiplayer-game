@@ -1,6 +1,10 @@
 # Roulette Multiplayer Game
 
-This project is a demo multiplayer roulette game built using React, Redux, and Boardgame.io. The game supports multiple players, real-time updates, and a smooth user interface.
+This project is a demo multiplayer roulette game built using React, Redux, and Boardgame.io. The game supports real-time updates, winners history and a smooth user interface, covering features such as:
+
+- Multiple Players
+- Multiple Game Sessions
+- Lobby of Games
 
 ## Table of Contents
 
@@ -17,7 +21,7 @@ To get started, follow these steps:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/roulette-multiplayer-game.git
+git clone https://github.com/nhambardzumyan/roulette-multiplayer-game.git
 ```
 
 2. Navigate to the project directory and sync core files:
@@ -132,10 +136,7 @@ For the server:
 - Boardgame.io: A framework for creating turn-based games.
 - TypeScript: A superset of JavaScript that adds static type checking.
 - Express: A fast, unopinionated, minimalist web framework for Node.js.
-
-## Contributing
-
-Contributions are welcome! If you have any suggestions or improvements, feel free to open an issue or submit a pull request.
+- Material-UI: A popular React UI framework for implementing Google's Material Design.
 
 ## License
 

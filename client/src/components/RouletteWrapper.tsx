@@ -8,7 +8,7 @@ import {
   setCellClickAction,
   setChipClickAction,
   setGameDataAction,
-} from '../redux/actions/socketActions';
+} from '../redux/actions/rouletteActions';
 
 import { Item, PlacedChip, GameData, GameStages, BoardGameAPI } from '../types';
 import { AppDispatch, RootState } from '../redux/store';

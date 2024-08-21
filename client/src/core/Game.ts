@@ -1,20 +1,6 @@
 import { Game, Ctx } from 'boardgame.io';
-import { ActivePlayers, INVALID_MOVE } from 'boardgame.io/core';
-import { calculateWinnings, GameStages, PlacedChip } from './types';
-
-export interface GameState {
-  quit: boolean;
-  wins: any[];
-  players: {
-    [id: string]: {
-      name: string;
-      bets: PlacedChip[] | null;
-      totalWinnings?: number;
-    };
-  };
-  stage: GameStages;
-  spinResult: number | null;
-}
+import { ActivePlayers } from 'boardgame.io/core';
+import { calculateWinnings, GameStages, GameState, PlacedChip } from './types';
 
 function getRandomNumberInt(min: number, max: number) {
   min = Math.ceil(min);

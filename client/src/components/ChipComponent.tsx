@@ -1,5 +1,5 @@
-import React from "react";
-import Chip from "./Chip";
+import React from 'react';
+import Chip from './Chip';
 function ChipComponent(props: {
   currentItemChips: any;
   tdKey: any;
@@ -14,7 +14,7 @@ function ChipComponent(props: {
   colSpan: number | undefined;
   onCellClick: (arg0: any) => void;
 }) {
-  console.log("Child Render");
+  console.log('Child Render');
 
   var currentItemChips = props.currentItemChips;
   var tdKey = props.tdKey;
@@ -22,7 +22,7 @@ function ChipComponent(props: {
   var chipKey = props.chipKey;
   var cell = props.cell;
 
-  var sum = "";
+  var sum = '';
   if (currentItemChips !== undefined) {
     if (currentItemChips.sum !== 0) {
       sum = currentItemChips.sum;
@@ -40,8 +40,8 @@ function ChipComponent(props: {
     top = props.topMin + (props.topMax - props.topMin) / 2;
   }
   let style = {
-    top: top + "px",
-    left: left + "px",
+    top: top + 'px',
+    left: left + 'px',
   };
 
   return (
@@ -51,7 +51,7 @@ function ChipComponent(props: {
       rowSpan={props.rowSpan}
       colSpan={props.colSpan}
       onClick={(e) => {
-        console.log("click");
+        console.log('click');
         props.onCellClick(cell);
       }}
     >
@@ -64,8 +64,8 @@ function ChipComponent(props: {
         currentItemChips={currentItemChips}
         currentItem={cell}
       />
-      <div className={"chipValue"}>
-        <div style={style} className={"chipSum"}>
+      <div className={'chipValue'}>
+        <div style={style} className={'chipSum'}>
           {sum}
         </div>
       </div>

@@ -1,16 +1,13 @@
-// import useSound from 'use-sound';
-
-// import GetHand from '../GetHand/GetHand';
-// import {v4 as uuid} from 'uuid';
-import './Player.css';
-import { ChipValues, ChipValuesList } from '../../types';
-
-// Media asset imports
-import donnie1 from '../../assets/portraits/ballerina.jpg';
-import { Box, Button, Card, CardContent, Typography } from '@mui/material';
-import classNames from 'classnames';
-import { RootState } from '../../redux/store';
 import { useSelector } from 'react-redux';
+import classNames from 'classnames';
+import { Box, Button, Card, CardContent, Typography } from '@mui/material';
+
+import { ChipValues, ChipValuesList } from '../../types';
+import { RootState } from '../../redux/store';
+
+import donnie1 from '../../assets/portraits/ballerina.jpg';
+
+import './Player.css';
 
 export default function Player({ name, clearBet, placeBet, onChipClick }) {
   const { chipsData, winners } = useSelector(
@@ -47,21 +44,21 @@ export default function Player({ name, clearBet, placeBet, onChipClick }) {
         >
           <CardContent>
             <div className={`player`}>
-                <Box
-                  display="flex"
-                  flexDirection="column"
-                  alignItems="center"
-                  gap="0.5rem"
-                >
-                  <img
-                    src={portraitImage}
-                    alt="portrait"
-                    className={'profile-image'}
-                  />
-                </Box>
-                <Typography variant="subtitle1" color="#FAFAD2" align="center">
-                  {name}
-                </Typography>
+              <Box
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+                gap="0.5rem"
+              >
+                <img
+                  src={portraitImage}
+                  alt="portrait"
+                  className={'profile-image'}
+                />
+              </Box>
+              <Typography variant="subtitle1" color="#FAFAD2" align="center">
+                {name}
+              </Typography>
             </div>
             <div className="roulette-actions hideElementsTest">
               <ul>

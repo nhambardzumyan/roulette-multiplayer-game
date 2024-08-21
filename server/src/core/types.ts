@@ -239,3 +239,17 @@ export enum ChipValues {
   Classic = 10,
   LowRoller = 5,
 }
+
+export interface GameState {
+  quit: boolean;
+  wins: any[];
+  players: {
+    [id: string]: {
+      name: string;
+      bets: PlacedChip[] | null;
+      totalWinnings?: number;
+    };
+  };
+  stage: GameStages;
+  spinResult: number | null;
+}
