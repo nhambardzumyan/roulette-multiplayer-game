@@ -72,6 +72,7 @@ The project structure is as follows:
 
 ```
 roulette-multiplayer-game/
+├── core
 ├── client/
 │   ├── public/
 │   ├── src/
@@ -85,6 +86,12 @@ roulette-multiplayer-game/
 └── sync_core.sh
 └── docker-compose.yaml
 
+```
+
+**IMPORTANT:** The core of the project contains the Game file logic. If you need to update the Game, modify the file located in the `/core` directory and then run the command to synchronize the changes between the client and server.
+
+```bash
+source sync_core.sh
 ```
 
 ## Usage
