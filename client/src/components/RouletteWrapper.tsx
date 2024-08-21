@@ -103,9 +103,8 @@ const RouletteWrapper = ({ onBet, ctx, G, handleNextPhase }: any) => {
   const handlePlayAgain = useCallback(() => {
     if (GameStages.PLAYING === ctx.phase) {
       clearBet();
-      // TODO:
-      // handleNextPhase();
     }
+    handleNextPhase();
   }, [ctx.phase]);
 
   let phaseTitle = 'Welcome to the Casino Roulette!';
@@ -146,7 +145,7 @@ const RouletteWrapper = ({ onBet, ctx, G, handleNextPhase }: any) => {
               <Button
                 variant="contained"
                 color="success"
-                onClick={handleNextPhase}
+                onClick={handlePlayAgain}
                 // disabled={ctx.phase !== GameStages.PLACE_BET}
               >
                 {buttonTitle}
@@ -203,7 +202,7 @@ const RouletteWrapper = ({ onBet, ctx, G, handleNextPhase }: any) => {
           <Typography
             variant="body1"
             color="#FAFAD2"
-            align="center"
+            align="left"
             key={index}
           >
             {index + 1}. {entry.username} won {entry.sum}${/* </div> */}
